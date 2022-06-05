@@ -6,13 +6,14 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 import { SubmitHandler, useForm } from 'react-hook-form'
+import useAuth from '../hooks/useAuth'
 interface Inputs {
   email: string
   password: string
 }
 function Login() {
   const [login, setLogin] = useState(false)
-
+  const { signIn, signUp } = useAuth()
   const {
     register,
     handleSubmit,
